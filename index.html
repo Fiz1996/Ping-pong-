@@ -70,7 +70,7 @@
         window.onload = function(){
             canvas = document.getElementById('gameCanvas');
             canvasContext = canvas.getContext('2d');
-            canvasContext.font= "100px"
+            canvas.font= "100px Arial"
             var framesPerSecond = 30; 
             setInterval(function(){
                         moveEverything();
@@ -176,11 +176,11 @@
                 canvasContext.fillStyle = 'white'
                 
                 if(player1Score >= WINNING_SCORE) {
-                canvasContext.fillText("left player won", canvas.width/2,100);
+                canvasContext.fillText("left player won", 300,100);
                 } else if (player2Score >= WINNING_SCORE  ){
-                canvasContext.fillText("right player won", canvas.width/2,100);
+                canvasContext.fillText("right player won", 300,100);
                }
-               canvasContext.fillText("click to continue", canvas.width/2,500);
+               canvasContext.fillText("click to continue", 300,500);
 
                 return;
             }
@@ -192,7 +192,7 @@
             colorRect(canvas.width-PADDLE_THICKNESS,paddle2Y,PADDLE_THICKNESS,PADDLE_HEIGHT,'blue');
             // next line draws the ball
             colorCircle(ballX,ballY,10,'red');
-
+            canvasContext.font = "25px Arial" ;
             canvasContext.fillText(player1Score, 100,100);
             canvasContext.fillText(player2Score, canvas.width-100,100);
         }
@@ -209,6 +209,7 @@
            canvasContext.fillStyle = drawColor;
            canvasContext.fillRect(leftX,topY,width,height)
        }
+       
 
     </script>
 </html>
