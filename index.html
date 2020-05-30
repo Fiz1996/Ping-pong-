@@ -70,6 +70,7 @@
         window.onload = function(){
             canvas = document.getElementById('gameCanvas');
             canvasContext = canvas.getContext('2d');
+            canvasContext.font= "40 px Georgia"
             var framesPerSecond = 30; 
             setInterval(function(){
                         moveEverything();
